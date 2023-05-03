@@ -36,12 +36,12 @@ while game_is_on:
         scoreboard.increase_score()
     
     if snake.turtles[0].xcor() > 290 or snake.turtles[0].xcor() < -290 or snake.turtles[0].ycor() > 290 or snake.turtles[0].ycor() < -290:
-        game_is_on = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
     
     for turtle in snake.turtles[1:]:
         if snake.turtles[0].distance(turtle) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()

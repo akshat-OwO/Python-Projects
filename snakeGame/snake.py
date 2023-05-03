@@ -19,6 +19,12 @@ class Snake:
         turtle.setposition(position)
         self.turtles.append(turtle)
     
+    def reset(self):
+        for turtle in self.turtles:
+            turtle.goto(1000, 1000)
+        self.turtles.clear()
+        self.createSnake()
+    
     def extend(self):
         self.add_turtle(self.turtles[-1].position())
     
